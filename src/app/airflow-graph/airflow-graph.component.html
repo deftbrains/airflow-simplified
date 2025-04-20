@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>DAG Visualizer</mat-card-title>
+    <mat-card-content class="controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Select DAG</mat-label>
+        <mat-select [(value)]="selectedDagId">
+          <mat-option *ngFor="let dag of dags" [value]="dag.dag_id">
+            {{ dag.dag_display_name || dag.dag_id }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="loadDagTasks()"
+        [disabled]="!selectedDagId || loading"
+      >
+        Show
+      </button>
+  
+      <mat-progress-spinner
+        *ngIf="loading"
+        diameter="30"
+        mode="indeterminate"
+        color="primary"
+      ></mat-progress-spinner>
+    </mat-card-content>
+  </mat-card>
+  
+  <div id="cy" class="cytoscape-container"></div>

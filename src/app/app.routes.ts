@@ -1,3 +1,8 @@
-import { Routes } from '@angular/router';
+import { AirflowGraphComponent } from './airflow-graph/airflow-graph.component';
 
-export const routes: Routes = [];
+export const routes = [
+  {
+    path: '',
+    component: AirflowGraphComponent
+  }
+];

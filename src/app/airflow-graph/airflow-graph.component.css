@@ -1,0 +1,25 @@
+mat-card {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  :host {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .cytoscape-container {
+    width: 100%;
+    height: calc(100vh - 200px);
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
